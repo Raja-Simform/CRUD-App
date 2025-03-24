@@ -4,14 +4,14 @@
   box-sizing: border-box;
 }
 :root {
-   --container-height:100vh;
-   --container-width:100vw;
-   --header-font-size:2rem;
-   --user-list-bg:rgb(17, 16, 16);
-   --btn-background:rgb(143, 212, 212);
-   --border-color:blue;
-   --black-color:black;
-   --container-background-color:rgb(157, 212, 160);
+  --container-height: 100vh;
+  --container-width: 100vw;
+  --header-font-size: 2rem;
+  --user-list-bg: rgb(17, 16, 16);
+  --btn-background: rgb(143, 212, 212);
+  --border-color: blue;
+  --black-color: black;
+  --container-background-color: rgb(157, 212, 160);
 }
 .container {
   width: var(--container-width);
@@ -70,7 +70,7 @@ h1 {
   justify-content: center;
 }
 #sort-feild {
-  background-color:var(--btn-background);
+  background-color: var(--btn-background);
   border: 1px solid var(--border-color);
   height: 2rem;
   font-size: 1.3rem;
@@ -120,7 +120,7 @@ h1 {
 }
 #add_new_user button:hover {
   outline: none;
-  background-color:var(--btn-background);
+  background-color: var(--btn-background);
 }
 
 .user {
@@ -219,15 +219,15 @@ h1 {
     flex-direction: column;
   }
 }
-@media(max-width:554px){
-  .sort-btns{
+@media (max-width: 554px) {
+  .sort-btns {
     flex-direction: column;
     align-items: start;
   }
-  .header{
-    height:30%;
+  .header {
+    height: 30%;
   }
-  .sort-function{
+  .sort-function {
     align-items: normal;
   }
 }
