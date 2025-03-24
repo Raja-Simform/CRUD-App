@@ -3222,7 +3222,7 @@
 76/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/@swc/counter/index.js1742542835649489921 0
 116/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/@typescript-eslint/scope-manager/dist/lib/es2015.generator.js1742543502157541952 0
 123/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/@typescript-eslint/scope-manager/dist/lib/es2015.symbol.wellknown.js1742543502161541992 0
-68/home/raja.jha@simform.dom/Downloads/CRUD/dist/CRUD.3a01df49.css.map1742820829026274140 0
+68/home/raja.jha@simform.dom/Downloads/CRUD/dist/CRUD.3a01df49.css.map1742810266011289240 0
 78/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/@parcel/optimizer-image1742542835717490791 1
 102/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/caniuse-lite/data/features/css-text-box-trim.js1742542836149496317 0
 128/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/@typescript-eslint/eslint-plugin/dist/rules/prefer-function-type.d.ts.map1742543502405544401 0
@@ -3854,7 +3854,7 @@
 76/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/@parcel/fs/index.d.ts1742542835885492940 0
 106/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/@parcel/optimizer-htmlnano/lib/HTMLNanoOptimizer.js1742542835713490739 0
 67/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/levn/LICENSE1742543502073541123 0
-46/home/raja.jha@simform.dom/Downloads/CRUD/dist1742820829026274140 1
+46/home/raja.jha@simform.dom/Downloads/CRUD/dist1742820718652574056 1
 93/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/cosmiconfig/dist/getDirectory.d.ts.map1742542835853492530 0
 98/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/lint-staged/node_modules/chalk/package.json1742544196065024575 0
 106/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/@typescript-eslint/scope-manager/dist/lib/es2023.js1742543502217542545 0
@@ -4334,7 +4334,7 @@
 121/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/posthtml/node_modules/dom-serializer/lib/esm/foreignNames.d.ts.map1742542835797491814 0
 95/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/fast-json-stable-stringify/.eslintrc.yml1742543502133541716 0
 89/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/type-fest/source/partial-deep.d.ts1742542835857492581 0
-57/home/raja.jha@simform.dom/Downloads/CRUD/dist/index.html1742820828990273592 0
+57/home/raja.jha@simform.dom/Downloads/CRUD/dist/index.html1742820718652574056 0
 89/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/@parcel/graph/lib/shared-buffer.js1742542835877492837 0
 79/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/yaml/dist/doc/anchors.js1742544196065024575 0
 90/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/@parcel/runtime-rsc/rsc-helpers.jsx1742542835781491609 0
@@ -4535,7 +4535,7 @@
 80/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/brace-expansion/README.md1742543502089541281 0
 114/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/@typescript-eslint/scope-manager/dist/lib/dom.iterable.d.ts1742543502345543809 0
 103/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/posthtml/node_modules/domutils/lib/querying.d.ts1742542835853492530 0
-64/home/raja.jha@simform.dom/Downloads/CRUD/dist/CRUD.3a01df49.css1742820829022274078 0
+64/home/raja.jha@simform.dom/Downloads/CRUD/dist/CRUD.3a01df49.css1742810266011289240 0
 85/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/entities/lib/esm/escape.js.map1742542835917493349 0
 92/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/typescript/lib/lib.es2019.object.d.ts1742543502541545744 0
 75/home/raja.jha@simform.dom/Downloads/CRUD/node_modules/env-paths/index.d.ts1742542835733490996 0

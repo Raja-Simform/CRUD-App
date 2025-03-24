@@ -5,7 +5,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel ./index.html ",
     "prepare": "husky",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "build":"parcel build ./index.html"
   },
   "keywords": [],
   "author": "",
