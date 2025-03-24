@@ -8,10 +8,10 @@
   --container-width: 100vw;
   --header-font-size: 2rem;
   --user-list-bg: rgb(17, 16, 16);
-  --btn-background: rgb(143, 212, 212);
+  --btn-background:#047cfc;
   --border-color: blue;
   --black-color: black;
-  --container-background-color: rgb(157, 212, 160);
+  --container-background-color: white;
 }
 .container {
   width: var(--container-width);
@@ -72,6 +72,7 @@ h1 {
 #sort-feild {
   background-color: var(--btn-background);
   border: 1px solid var(--border-color);
+  color: white;
   height: 2rem;
   font-size: 1.3rem;
   border-radius: 0.3rem;
