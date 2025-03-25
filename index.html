@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="container" aria-label="Container">
+    <div class="container" >
       <section class="header" aria-label="Header">
         <h1 id="heading" aria-label="Heading">User Management System</h1>
         <div class="function" aria-label="Header function">
           <div class="sort-function" aria-label="sorting function">
             <h2 id="sort-by" aria-label="Sort by">Sort By:</h2>
-            <div class="sort-btns" aria-label="sorting options">
+            <div class="sort-btns" >
               <div class="sort-selection" aria-label="choose Parameter">
                 <select id="sort-feild" aria-label="sorting data feild">
                   <option value="firstName" aria-label="First Name">
@@ -24,14 +24,14 @@
                   </option>
                   <option value="age" aria-label="Age">Age</option>
                 </select>
-                <select id="order" aria-label="Chose sorting order">
+                <select id="order" aria-label="Choose sorting order">
                   <option value="asc" aria-label="Ascending">Ascending</option>
                   <option value="desc" aria-label="Descending">
                     Descending
                   </option>
                 </select>
               </div>
-              <button id="sort-submit" aria-label="Submit button">Sort</button>
+              <button id="sort-submit" >Sort</button>
             </div>
           </div>
           <div id="add_new_user" aria-label="Add new User">
@@ -55,6 +55,6 @@
         <main class="user_list" aria-label="User data list"></main>
       </section>
     </div>
-  
+    <script src="./src/index.ts" type="module"></script>
   </body>
 </html>

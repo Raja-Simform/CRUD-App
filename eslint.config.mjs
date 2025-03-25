@@ -28,6 +28,9 @@ export default [
         setTimeout: 'readonly',
         importScripts: 'readonly',
         require: 'readonly',
+        HTMLElement:'readonly',
+        fetch:'readonly',
+        HTMLSelectElement:'readonly'
       },
     },
     plugins: {
