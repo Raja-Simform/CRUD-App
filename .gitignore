@@ -19,7 +19,7 @@ yarn-error.log*
 .env
 
 # Parcel cache
-.cache/
+.parcel-cache/
 
 # IDE specific files
 .vscode/

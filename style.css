@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --header-font-size: 1.5rem;
+  --user-list-bg: rgb(17, 16, 16);
+  --btn-background: #047cfc;
+  --border-color: blue;
+  --black-color: black;
+  --container-background-color: white;
+}
+body{
+  width: 100%;
+}
+.container {
+  background-color: var(--container-background-color);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow-x: none;
+}
+.header {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+h1 {
+  font-size: 2rem;
+}
+#heading {
+  text-align: center;
+  height: 40%;
+  width: 100%;
+}
+.function {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.sort-function {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+#sort-by {
+  font-weight: 800;
+  font-size: var(--header-font-size);
+}
+.sort-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+#add_new_user {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#sort-feild {
+  background-color: var(--btn-background);
+  border: 1px solid var(--border-color);
+  color: white;
+  height: 2rem;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  text-align: center;
+}
+#sort-feild:hover {
+  outline: 1px solid var(--black-color);
+  cursor: pointer;
+}
+
+#order {
+  background-color: var(--btn-background);
+  border: 1px solid var(--border-color);
+  height: 2rem;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  color: white;
+}
+#order:hover {
+  outline: 1px solid var(--black-color);
+  cursor: pointer;
+}
+
+#sort-submit {
+  width: 6rem;
+  height: 2rem;
+  padding: 5px;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  background-color: var(--btn-background);
+  border: 1px solid var(--border-color);
+  color: white;
+}
+#sort-submit:hover {
+  outline: 1px solid black;
+  cursor: pointer;
+}
+#add_new_user button {
+  width: 10rem;
+  height: 2rem;
+  padding: 5px;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  background-color: var(--btn-background);
+  border: 1px solid var(--border-color);
+  color: white;
+}
+#add_new_user button:hover {
+  outline: 1px solid black;
+  cursor: pointer;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.user_list_header {
+  display: flex;
+  height: 3rem;
+  width: 100%;
+  background-color: aliceblue;
+}
+.user_list {
+  background-color: rgb(242, 218, 231);
+  width: 100%;
+}
+.user_list_item {
+  display: flex;
+  width: 100%;
+  height: 2rem;
+}
+.user_list_first_name {
+  width: 15%;
+  border: 1px solid rgb(17, 16, 16);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.user_list_last_name {
+  width: 15%;
+  border: 1px solid var(--user-list-bg);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.user_list_email {
+  width: 25%;
+  border: 1px solid var(--user-list-bg);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.user_list_username {
+  width: 10%;
+  border: 1px solid var(--user-list-bg);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.user_list_age {
+  width: 10%;
+  border: 1px solid var(--user-list-bg);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.user_list_gender {
+  width: 10%;
+  border: 1px solid var(--user-list-bg);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.edit-btn {
+  width: 7.5%;
+  border: 1px solid var(--user-list-bg);
+  text-align: center;
+  background-color: rgb(194, 201, 178);
+}
+.edit-btn:hover {
+  border: 2px solid green;
+  background-color: rgb(193, 123, 159);
+}
+.delete-btn {
+  width: 7.5%;
+  border: 1px solid var(--user-list-bg);
+  text-align: center;
+  background-color: rgb(194, 201, 178);
+}
+.delete-btn:hover {
+  background-color: rgb(193, 123, 159);
+}
+
+@media (max-width: 712px) {
+  .function {
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 554px) {
+  .sort-btns {
+    flex-direction: column;
+    align-items: start;
+  }
+  .header {
+    height: 30%;
+  }
+  .sort-function {
+    align-items: normal;
+  }
+}
+@media (max-width: 364px) {
+  .header {
+    height: 30%;
+  }
+  .sort-function {
+    gap: 2px;
+  }
+  .sort-btns {
+    gap: 2px;
+  }
+  #sort-submit {
+    margin-right: 2px;
+  }
+  .sort-selection {
+    width: fit-content;
+  }
+}

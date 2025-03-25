@@ -1,12 +1,60 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="./src/index.ts"></script>
-</head>
-<body>
-   hello
-</body>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <section class="header" aria-label="Header">
+        <h1 id="heading" aria-label="Heading">User Management System</h1>
+        <div class="function" aria-label="Header function">
+          <div class="sort-function" aria-label="sorting function">
+            <h2 id="sort-by" aria-label="Sort by">Sort By:</h2>
+            <div class="sort-btns">
+              <div class="sort-selection" aria-label="choose Parameter">
+                <select id="sort-feild" aria-label="sorting data feild">
+                  <option value="firstName" aria-label="First Name">
+                    First Name
+                  </option>
+                  <option value="lastName" aria-label="Second Name">
+                    Last Name
+                  </option>
+                  <option value="age" aria-label="Age">Age</option>
+                </select>
+                <select id="order" aria-label="Choose sorting order">
+                  <option value="asc" aria-label="Ascending">Ascending</option>
+                  <option value="desc" aria-label="Descending">
+                    Descending
+                  </option>
+                </select>
+              </div>
+              <button id="sort-submit">Sort</button>
+            </div>
+          </div>
+          <div id="add_new_user" aria-label="Add new User">
+            <button>Add User</button>
+          </div>
+        </div>
+      </section>
+      <section class="user" aria-label="User information">
+        <header class="user_list_header" aria-label="User header">
+          <span class="user_list_first_name" aria-label="First Name"
+            >First Name</span
+          >
+          <span class="user_list_last_name" aria-label="Last name"
+            >Last name</span
+          >
+          <span class="user_list_email" aria-label="Email">Email</span>
+          <span class="user_list_username" aria-label="Username">Username</span>
+          <span class="user_list_age" aria-label="Age">Age</span>
+          <span class="user_list_gender" aria-label="Gender">Gender</span>
+        </header>
+        <main class="user_list" aria-label="User data list"></main>
+      </section>
+    </div>
+    <script src="./src/index.ts" type="module"></script>
+  </body>
 </html>
