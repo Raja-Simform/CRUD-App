@@ -52,5 +52,45 @@ export class View {
       this.user_list.appendChild(user);
     });
   }
-  addUser(): void {}
+  addUser(): User[] {
+    const addForm = document.getElementById('addForm')! as HTMLFormElement;
+    const container = document.getElementById('containerId')!;
+    if (!addForm || !container) {
+      console.error('Required elements not found');
+      return [];
+    }
+    const formElement = addForm as HTMLFormElement;
+
+    addForm.style.zIndex = '1';
+    container.style.opacity = '0.2';
+    const users: User[] = [];
+    const submitHandler = (e: SubmitEvent) => {
+      e.preventDefault();
+      const data = new FormData(formElement);
+      const id = Date.now().toString();
+      const newuser: User = {
+        firstName: data.get('firstName') as string,
+        lastName: data.get('lastName') as string,
+        age: data.get('age') as string,
+        email: data.get('email') as string,
+        username: data.get('username') as string,
+        gender: data.get('gender') as string,
+        id: id,
+      };
+      users.push(newuser);
+      formElement.reset();
+      // this.updateDisaplay(this.users);
+      console.log(users);
+    };
+
+    formElement.addEventListener('submit', submitHandler);
+    return users;
+  }
+  // updateDisaplay(users: User[]) {
+  //   const el = document.getElementById('userList');
+  //   if (!el) {
+  //     return;
+  //   }
+  //   el.
+  // }
 }

@@ -7,14 +7,21 @@ export class Controller {
     this.Services = Services;
     this.View = View;
     this.init();
+
     const sortSubmit = document.getElementById('sort-submit');
     if (sortSubmit) {
       sortSubmit.addEventListener('click', this.handleSort.bind(this));
     }
+
     const deleteButtons = document.querySelectorAll('.delete-btn');
     deleteButtons.forEach((button) => {
       button.addEventListener('click', this.handleDelete.bind(this));
     });
+
+    const add = document.getElementById('add_new_user');
+    if (add) {
+      add.addEventListener('click', this.handleAdd.bind(this));
+    }
   }
   async init(): Promise<void> {
     const val = await this.Services.getUsers();
@@ -23,7 +30,13 @@ export class Controller {
   }
   handleDelete(): void {}
 
-  handleAdd(): void {}
+  handleAdd(): void {
+    const data = this.View.addUser();
+    // const returnedData = this.Services.addUser(data);
+    // console.log(data);
+    // this.View.render(data);
+    console.log(data);
+  }
 
   async handleSort(): Promise<void> {
     const order = document.getElementById('order') as HTMLSelectElement;

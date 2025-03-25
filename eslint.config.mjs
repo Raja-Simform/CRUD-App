@@ -30,7 +30,10 @@ export default [
         require: 'readonly',
         HTMLElement:'readonly',
         fetch:'readonly',
-        HTMLSelectElement:'readonly'
+        HTMLSelectElement:'readonly',
+        'SubmitEvent':'readonly',
+        'FormData':'readonly',
+        'HTMLFormElement':'readonly'
       },
     },
     plugins: {

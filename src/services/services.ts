@@ -12,7 +12,9 @@ export class Services {
     const data = await response.json();
     return data;
   }
-  addUser(): void {}
+  addUser(data: User[]) {
+    return data;
+  }
   async sortUser(
     sortfeild1: string,
     sortfeild2: string,

@@ -11,12 +11,16 @@
   --black-color: black;
   --container-background-color: white;
 }
+body{
+  width: 100%;
+  position: relative;
+}
 .container {
   background-color: var(--container-background-color);
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  overflow-x: none;
+  
 }
 .header {
   width: 100%;
@@ -42,6 +46,7 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 3rem;
+  
 }
 .sort-function {
   height: 100%;
@@ -126,9 +131,6 @@ h1 {
 .user {
   display: flex;
   flex-direction: column;
-
-
-
 }
 .user_list_header {
   display: flex;
@@ -214,7 +216,45 @@ h1 {
   background-color: white;
   cursor: pointer;
 }
-
+#addForm{
+  z-index: -1;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: white;
+  width: 30%;
+  height: 25rem
+}
+.formInput{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.input_data{
+ height: 2.5rem;
+ border: 2px solid blue;
+}
+.input_data::placeholder{
+  color: rgb(0, 0, 0);
+}
+#form-submit{
+  height: 2rem;
+  width: 4rem;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  background-color: var(--btn-background);
+  border: 1px solid var(--border-color);
+  color: white;
+}
+#form-submit:hover{
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
 @media (max-width: 712px) {
   .function {
     gap: 5px;
