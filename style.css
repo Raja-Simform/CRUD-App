@@ -11,8 +11,10 @@
   --black-color: black;
   --container-background-color: white;
 }
+body{
+  width: 100%;
+}
 .container {
-  width: 100vw;
   background-color: var(--container-background-color);
   display: flex;
   flex-direction: column;
