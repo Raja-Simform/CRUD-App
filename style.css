@@ -6,13 +6,13 @@
 :root {
   --header-font-size: 1.5rem;
   --user-list-bg: rgb(17, 16, 16);
-  --btn-background:#047cfc;
+  --btn-background: #047cfc;
   --border-color: blue;
   --black-color: black;
   --container-background-color: white;
 }
 .container {
-  width:100vw;
+  width: 100vw;
   background-color: var(--container-background-color);
   display: flex;
   flex-direction: column;
