@@ -201,17 +201,6 @@ h1 {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* .edit-btn {
-  width: 7.5%;
-  border: 1px solid var(--user-list-bg);
-  text-align: center;
-  background-color: rgb(194, 201, 178);
-}
-.edit-btn:hover {
-  border: 2px solid green;
-  background-color: white;
-  cursor: pointer;
-} */
 .delete-btn {
   width: 15%;
   border: 1px solid var(--user-list-bg);

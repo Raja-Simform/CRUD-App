@@ -54,7 +54,16 @@ export class View {
 
       deletebtn.className = 'delete-btn';
       deletebtn.textContent = 'Delete';
-
+      // const details: HTMLElement[] = [
+      //   user,
+      //   first_name,
+      //   last_name,
+      //   email,
+      //   username,
+      //   age,
+      //   gender,
+      //   deletebtn,
+      // ];
       user.className = 'user_list_item';
       first_name.className = 'user_list_first_name';
       last_name.className = 'user_list_last_name';
