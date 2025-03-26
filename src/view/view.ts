@@ -10,6 +10,15 @@ export class View {
     }
     this.user_list = userList as HTMLElement;
   }
+  renderSort(sortOption: string[], sortValue: string[], select: HTMLElement) {
+    for (let i = 0; i < sortOption.length; i++) {
+      const option = document.createElement('option');
+      option.textContent = sortOption[i];
+      option.value = sortValue[i];
+      option.ariaLabel = sortOption[i];
+      select.appendChild(option);
+    }
+  }
 
   render(data: User[]): void {
     this.user_list.innerHTML = '';

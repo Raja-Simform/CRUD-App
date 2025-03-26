@@ -5,7 +5,6 @@ import { Services } from '../services/services';
 export class Controller {
   private Services: Services;
   private View: View;
-
   constructor(Services: Services, View: View) {
     this.Services = Services;
     this.View = View;
@@ -28,6 +27,14 @@ export class Controller {
   }
 
   async init(): Promise<void> {
+    const sortOption1 = ['First Name', 'Last Name', 'Age'];
+    const sortValue1 = ['firstName', 'lastName', 'age'];
+    const sortOption2 = ['Ascending', 'Descending'];
+    const sortValue2 = ['asc', 'desc'];
+    const select1 = document.getElementById('sort-feild') as HTMLElement;
+    const select2 = document.getElementById('order') as HTMLElement;
+    this.View.renderSort(sortOption1, sortValue1, select1);
+    this.View.renderSort(sortOption2, sortValue2, select2);
     const val = await this.Services.getUsers();
     // console.log(val);
     this.View.render(val.users);
