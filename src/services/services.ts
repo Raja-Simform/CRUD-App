@@ -20,6 +20,22 @@ export class Services {
 
   addUser(data: User): User[] {
     // return data;
+    // console.log(data.username);
+    fetch('https://dummyjson.com/users/add', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName: `${data.firstName}`,
+        lastName: `${data.lastName}`,
+        age: `${data.age}`,
+        username: `${data.username}`,
+        email: `${data.email}`,
+        gender: `${data.gender}`,
+      }),
+    })
+      .then((res) => res.json())
+      .then(console.log);
+
     if (!data.id) {
       data.id = Date.now().toString();
     }
