@@ -255,6 +255,8 @@ h1 {
   background-color: rgb(255, 255, 255);
   color: black;
 }
+#close-toggle{
+}
 @media (max-width: 712px) {
   .function {
     gap: 5px;
