@@ -88,7 +88,6 @@ export class View {
   addUser(): Promise<User[]> {
     const addForm = document.getElementById('addForm') as HTMLFormElement;
     const container = document.getElementById('containerId');
-    // const closeToggle=document.getElementById('close-toggle')!;
 
     if (!addForm || !container) {
       console.error('Required elements not found');
@@ -118,7 +117,6 @@ export class View {
         addForm.reset();
         addForm.style.zIndex = '-1';
         container.style.opacity = '1';
-        // closeToggle.style.zIndex = '-1';
 
         resolve(users);
       };
