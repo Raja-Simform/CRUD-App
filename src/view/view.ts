@@ -54,16 +54,7 @@ export class View {
 
       deletebtn.className = 'delete-btn';
       deletebtn.textContent = 'Delete';
-      // const details: HTMLElement[] = [
-      //   user,
-      //   first_name,
-      //   last_name,
-      //   email,
-      //   username,
-      //   age,
-      //   gender,
-      //   deletebtn,
-      // ];
+
       user.className = 'user_list_item';
       first_name.className = 'user_list_first_name';
       last_name.className = 'user_list_last_name';
@@ -78,7 +69,7 @@ export class View {
       age.textContent = element.age;
       gender.textContent = element.gender;
 
-      deletebtn.value = element.id;
+      deletebtn.value = element.id.toString();
 
       user.appendChild(first_name);
       user.appendChild(last_name);
@@ -87,7 +78,7 @@ export class View {
       user.appendChild(age);
       user.appendChild(gender);
       user.appendChild(deletebtn);
-      user.id = element.id;
+      user.id = element.id.toString();
       this.user_list.appendChild(user);
     });
   }
@@ -119,7 +110,7 @@ export class View {
           email: data.get('email') as string,
           username: data.get('username') as string,
           gender: data.get('gender') as string,
-          id: id,
+          id: Number(id),
         };
         users.push(newuser);
         addForm.reset();
@@ -133,7 +124,9 @@ export class View {
   }
 
   deleteUser(id: string): void {
-    const val = document.getElementById(id)!;
-    val.style.display = 'none';
+    const val = document.getElementById(id);
+    if (val) {
+      val.style.display = 'none';
+    }
   }
 }

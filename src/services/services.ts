@@ -35,7 +35,7 @@ export class Services {
       .then(console.log);
 
     if (!data.id) {
-      data.id = Date.now().toString();
+      data.id = Date.now();
     }
     this.users.push(data);
     return this.users;
