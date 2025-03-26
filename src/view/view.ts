@@ -53,7 +53,6 @@ export class View {
       const deletebtn = document.createElement('button');
 
       deletebtn.className = 'delete-btn';
-
       deletebtn.textContent = 'Delete';
 
       user.className = 'user_list_item';
@@ -79,12 +78,14 @@ export class View {
       user.appendChild(age);
       user.appendChild(gender);
       user.appendChild(deletebtn);
+      user.id = element.id;
       this.user_list.appendChild(user);
     });
   }
 
   addUser(): Promise<User[]> {
     const addForm = document.getElementById('addForm') as HTMLFormElement;
+    addForm.style.display = 'flex';
     const container = document.getElementById('containerId');
 
     if (!addForm || !container) {
@@ -122,9 +123,8 @@ export class View {
     });
   }
 
-  deleteUser():Promise<User[]>{
-      const
-    
-    return Promise[];
+  deleteUser(id: string): void {
+    const val = document.getElementById(id)!;
+    val.style.display = 'none';
   }
 }

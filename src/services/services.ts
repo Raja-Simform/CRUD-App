@@ -51,4 +51,12 @@ export class Services {
     const data = await response.json();
     return data;
   }
+
+  async deleteUser(id: string) {
+    fetch(`https://dummyjson.com/users/${id}`, {
+      method: 'DELETE',
+    })
+      .then((res) => res.json())
+      .then(console.log);
+  }
 }

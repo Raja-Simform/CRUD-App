@@ -13,13 +13,10 @@ export class Controller {
     if (sortSubmit) {
       sortSubmit.addEventListener('click', this.handleSort.bind(this));
     }
+
     const add = document.getElementById('add_new_user');
     if (add) {
       add.addEventListener('click', this.handleAdd.bind(this));
-    }
-    const deletebtn=document.querySelector('.delete-btn');
-    if(deletebtn){
-      deletebtn.addEventListener('click',this.handleDelete.bind(this));
     }
   }
 
@@ -32,8 +29,16 @@ export class Controller {
     const select2 = document.getElementById('order') as HTMLElement;
     this.View.renderSort(sortOption1, sortValue1, select1);
     this.View.renderSort(sortOption2, sortValue2, select2);
+
     const val = await this.Services.getUsers();
     this.View.render(val.users);
+
+    const deletebtn = document.querySelectorAll('.delete-btn');
+    if (deletebtn) {
+      deletebtn.forEach((element) => {
+        element.addEventListener('click', this.handleDelete.bind(this));
+      });
+    }
   }
 
   async handleAdd(): Promise<void> {
@@ -63,7 +68,11 @@ export class Controller {
     this.View.render(data.users);
   }
 
-  async handleDelete():Promise<void>{
-       const data=await this.View.deleteUser();
+  handleDelete(event: Event): void {
+    const button = event.target as HTMLButtonElement;
+    const userId = button.value;
+    // console.log(userId);
+    this.Services.deleteUser(userId);
+    this.View.deleteUser(userId);
   }
 }
