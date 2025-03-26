@@ -50,12 +50,10 @@ export class View {
       const username = document.createElement('span');
       const age = document.createElement('span');
       const gender = document.createElement('span');
-      const editbtn = document.createElement('button');
       const deletebtn = document.createElement('button');
 
-      editbtn.className = 'edit-btn';
       deletebtn.className = 'delete-btn';
-      editbtn.textContent = 'Edit';
+
       deletebtn.textContent = 'Delete';
 
       user.className = 'user_list_item';
@@ -71,7 +69,7 @@ export class View {
       username.textContent = element.username;
       age.textContent = element.age;
       gender.textContent = element.gender;
-      editbtn.value = element.id;
+
       deletebtn.value = element.id;
 
       user.appendChild(first_name);
@@ -80,11 +78,11 @@ export class View {
       user.appendChild(username);
       user.appendChild(age);
       user.appendChild(gender);
-      user.appendChild(editbtn);
       user.appendChild(deletebtn);
       this.user_list.appendChild(user);
     });
   }
+
   addUser(): Promise<User[]> {
     const addForm = document.getElementById('addForm') as HTMLFormElement;
     const container = document.getElementById('containerId');
@@ -122,5 +120,11 @@ export class View {
       };
       addForm.addEventListener('submit', this.submitHandler);
     });
+  }
+
+  deleteUser():Promise<User[]>{
+      const
+    
+    return Promise[];
   }
 }

@@ -17,6 +17,10 @@ export class Controller {
     if (add) {
       add.addEventListener('click', this.handleAdd.bind(this));
     }
+    const deletebtn=document.querySelector('.delete-btn');
+    if(deletebtn){
+      deletebtn.addEventListener('click',this.handleDelete.bind(this));
+    }
   }
 
   async init(): Promise<void> {
@@ -42,6 +46,7 @@ export class Controller {
     }
     console.log(data);
   }
+
   async handleSort(): Promise<void> {
     const order = document.getElementById('order') as HTMLSelectElement;
     const sortFeild = document.getElementById(
@@ -56,5 +61,9 @@ export class Controller {
     const data = await this.Services.sortUser(sortfeild1, sortfeild2);
     console.log(data.users);
     this.View.render(data.users);
+  }
+
+  async handleDelete():Promise<void>{
+       const data=await this.View.deleteUser();
   }
 }
