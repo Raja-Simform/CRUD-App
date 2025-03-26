@@ -2,14 +2,34 @@ import { User } from '../model/model';
 
 export class View {
   private user_list: HTMLElement;
-
+  private submitHandler: ((e: SubmitEvent) => void) | null = null;
   constructor() {
     const userList = document.querySelector('.user_list');
     if (!userList) {
       throw new Error();
     }
     this.user_list = userList as HTMLElement;
+    this.closebtn();
   }
+
+  private closebtn() {
+    const addForm = document.getElementById('addForm') as HTMLFormElement;
+    const container = document.getElementById('containerId');
+    const closeButton = document.createElement('button');
+
+    closeButton.textContent = 'close';
+    closeButton.id = 'close-form-btn';
+    closeButton.type = 'button';
+    closeButton.addEventListener('click', () => {
+      if (addForm && container) {
+        addForm.style.zIndex = '-1';
+        container.style.opacity = '1';
+        addForm.reset();
+      }
+    });
+    addForm.querySelector('.formInput')?.after(closeButton);
+  }
+
   renderSort(sortOption: string[], sortValue: string[], select: HTMLElement) {
     for (let i = 0; i < sortOption.length; i++) {
       const option = document.createElement('option');
@@ -32,6 +52,7 @@ export class View {
       const gender = document.createElement('span');
       const editbtn = document.createElement('button');
       const deletebtn = document.createElement('button');
+
       editbtn.className = 'edit-btn';
       deletebtn.className = 'delete-btn';
       editbtn.textContent = 'Edit';
@@ -68,6 +89,7 @@ export class View {
     const addForm = document.getElementById('addForm') as HTMLFormElement;
     const container = document.getElementById('containerId');
     // const closeToggle=document.getElementById('close-toggle')!;
+
     if (!addForm || !container) {
       console.error('Required elements not found');
       return Promise.resolve([]);
@@ -76,7 +98,10 @@ export class View {
     return new Promise((resolve) => {
       addForm.style.zIndex = '1';
       container.style.opacity = '0.2';
-      const submitHandler = (e: SubmitEvent) => {
+      if (this.submitHandler) {
+        addForm.removeEventListener('submit', this.submitHandler);
+      }
+      this.submitHandler = (e: SubmitEvent) => {
         e.preventDefault();
         const data = new FormData(addForm);
         const id = Date.now().toString();
@@ -95,10 +120,9 @@ export class View {
         container.style.opacity = '1';
         // closeToggle.style.zIndex = '-1';
 
-        addForm.removeEventListener('submit', submitHandler);
         resolve(users);
       };
-      addForm.addEventListener('submit', submitHandler);
+      addForm.addEventListener('submit', this.submitHandler);
     });
   }
 }

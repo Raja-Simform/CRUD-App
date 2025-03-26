@@ -1,6 +1,5 @@
 import { View } from '../view/view';
 import { Services } from '../services/services';
-// import { User } from '../model/model';
 
 export class Controller {
   private Services: Services;
@@ -14,12 +13,6 @@ export class Controller {
     if (sortSubmit) {
       sortSubmit.addEventListener('click', this.handleSort.bind(this));
     }
-
-    // const deleteButtons = document.querySelectorAll('.delete-btn');
-    // deleteButtons.forEach((button) => {
-    //   button.addEventListener('click', this.handleDelete.bind(this));
-    // });
-
     const add = document.getElementById('add_new_user');
     if (add) {
       add.addEventListener('click', this.handleAdd.bind(this));
@@ -36,24 +29,15 @@ export class Controller {
     this.View.renderSort(sortOption1, sortValue1, select1);
     this.View.renderSort(sortOption2, sortValue2, select2);
     const val = await this.Services.getUsers();
-    // console.log(val);
     this.View.render(val.users);
   }
-  // handleDelete(): void {}
 
   async handleAdd(): Promise<void> {
     const data = await this.View.addUser();
-    // const returnedData = this.Services.addUser(data);
-    // this.View.render(returnedData);
-    // if(data.length>0)
-    // console.log('data came');
-    // console.log(data);
     if (data.length > 0) {
-      const newUser = data[data.length - 1]; // Get the last added user
-
-      // Add the user to the service
+      const newUser = data[data.length - 1];
       const updatedUsers = this.Services.addUser(newUser);
-      // Re-render the view with updated users
+
       this.View.render(updatedUsers);
     }
     console.log(data);

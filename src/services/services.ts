@@ -19,8 +19,6 @@ export class Services {
   }
 
   addUser(data: User): User[] {
-    // return data;
-    // console.log(data.username);
     fetch('https://dummyjson.com/users/add', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

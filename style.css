@@ -6,12 +6,12 @@
 :root {
   --header-font-size: 1.5rem;
   --user-list-bg: rgb(17, 16, 16);
-  --btn-background:#047cfc;
+  --btn-background: #047cfc;
   --border-color: blue;
   --black-color: black;
   --container-background-color: white;
 }
-body{
+body {
   width: 100%;
   position: relative;
 }
@@ -20,7 +20,6 @@ body{
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  
 }
 .header {
   width: 100%;
@@ -46,7 +45,6 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  
 }
 .sort-function {
   height: 100%;
@@ -203,7 +201,7 @@ h1 {
 }
 .edit-btn:hover {
   border: 2px solid green;
-  background-color:white;
+  background-color: white;
   cursor: pointer;
 }
 .delete-btn {
@@ -216,7 +214,7 @@ h1 {
   background-color: white;
   cursor: pointer;
 }
-#addForm{
+#addForm {
   z-index: -1;
   position: absolute;
   top: 20%;
@@ -228,21 +226,26 @@ h1 {
   gap: 1rem;
   background-color: white;
   width: 30%;
-  height: 25rem
+  height: 25rem;
+  padding: 1rem;
+  box-shadow: 1 4px 6px rgba(0, 0, 0, 0.1);
 }
-.formInput{
+.formInput {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  width: 100%;
 }
-.input_data{
- height: 2.5rem;
- border: 2px solid blue;
+.input_data {
+  height: 2.5rem;
+  border: 2px solid blue;
+  padding: 0 10px;
 }
-.input_data::placeholder{
+.input_data::placeholder {
   color: rgb(0, 0, 0);
 }
-#form-submit{
+#form-submit,
+#close-form-btn {
   height: 2rem;
   width: 4rem;
   border-radius: 0.3rem;
@@ -250,12 +253,21 @@ h1 {
   background-color: var(--btn-background);
   border: 1px solid var(--border-color);
   color: white;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-#form-submit:hover{
+#form-submit:hover,
+#close-form-btn:hover {
   background-color: rgb(255, 255, 255);
   color: black;
 }
-#close-toggle{
+#close-form-btn {
+  background-color: #ff4d4d;
+}
+#close-form-btn:hover {
+  background-color: #ff4d4d;
+  color: white;
 }
 @media (max-width: 712px) {
   .function {
