@@ -21,18 +21,15 @@ export class Controller {
   }
 
   async init(): Promise<void> {
-    const sortOption1 = ['First Name', 'Last Name', 'Age'];
-    const sortValue1 = ['firstName', 'lastName', 'age'];
+    const val = await this.Services.getUsers();
+    this.View.render(val.users);
+    const sortOption1 = Object.keys(val.users[0]);
     const sortOption2 = ['Ascending', 'Descending'];
     const sortValue2 = ['asc', 'desc'];
     const select1 = document.getElementById('sort-field') as HTMLElement;
     const select2 = document.getElementById('order') as HTMLElement;
-    this.View.renderSort(sortOption1, sortValue1, select1);
+    this.View.renderSort(sortOption1, sortOption1, select1);
     this.View.renderSort(sortOption2, sortValue2, select2);
-
-    const val = await this.Services.getUsers();
-    this.View.render(val.users);
-
     const deletebtn = document.querySelectorAll('.delete-btn');
     if (deletebtn) {
       deletebtn.forEach((element) => {
