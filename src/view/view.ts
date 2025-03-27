@@ -34,6 +34,9 @@ export class View {
   renderSort(sortOption: string[], sortValue: string[], select: HTMLElement) {
     for (let i = 0; i < sortOption.length; i++) {
       const option = document.createElement('option');
+      if (sortOption[i] === 'id') {
+        continue;
+      }
       option.textContent = sortOption[i];
       option.value = sortValue[i];
       option.ariaLabel = sortOption[i];
