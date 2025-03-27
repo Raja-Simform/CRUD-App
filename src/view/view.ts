@@ -117,7 +117,6 @@ export class View {
     const container = document.getElementById('containerId');
 
     if (!addForm || !container) {
-      console.error('Required elements not found');
       return Promise.resolve([]);
     }
     const users: User[] = [];

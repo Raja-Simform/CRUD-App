@@ -52,7 +52,6 @@ export class Controller {
         });
       }
     }
-    console.log(data);
   }
 
   async handleSort(): Promise<void> {
@@ -61,20 +60,17 @@ export class Controller {
       'sort-field',
     ) as HTMLSelectElement;
     if (!order || !sortFields) {
-      console.log('element not exists');
       return;
     }
     const sortfield1 = order.value;
     const sortfield2 = sortFields.value;
     const data = await this.Services.sortUser(sortfield1, sortfield2);
-    console.log(data.users);
     this.View.render(data.users);
   }
 
   handleDelete(event: Event): void {
     const button = event.target as HTMLButtonElement;
     const userId = button.value;
-    console.log(userId);
     this.Services.deleteUser(userId);
     this.View.deleteUser(userId);
   }
