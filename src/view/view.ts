@@ -37,6 +37,7 @@ export class View {
       if (sortOption[i] === 'id') {
         continue;
       }
+    
       option.textContent = sortOption[i];
       option.value = sortValue[i];
       option.ariaLabel = sortOption[i];
@@ -156,7 +157,6 @@ export class View {
           !email ||
           !validateNoSpaces(email)
         ) {
-          // eslint-disable-next-line no-undef
           alert('Please fill all feilds');
           return;
         }

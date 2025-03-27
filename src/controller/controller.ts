@@ -1,6 +1,6 @@
 import { View } from '../view/view';
 import { Services } from '../services/services';
-
+import { User } from '../model/model';
 export class Controller {
   private Services: Services;
   private View: View;
@@ -19,11 +19,23 @@ export class Controller {
       add.addEventListener('click', this.handleAdd.bind(this));
     }
   }
-
+  checkOption(obj:User):string[]{
+       const arr=[];
+       for(const a of Object.keys(obj)){
+        if(typeof(obj[a])==='object'){
+          continue;
+        }
+        arr.push(a);
+       }
+       return arr;
+       
+  }
   async init(): Promise<void> {
     const val = await this.Services.getUsers();
     this.View.render(val.users);
-    const sortOption1 = Object.keys(val.users[0]);
+    const newval=val.users[0];
+    const sortOption1=this.checkOption(newval)||'';
+    
     const sortOption2 = ['Ascending', 'Descending'];
     const sortValue2 = ['asc', 'desc'];
     const select1 = document.getElementById('sort-field') as HTMLElement;
