@@ -7,31 +7,23 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="containerId" >
+
       <section class="header" aria-label="Header">
         <h1 id="heading" aria-label="Heading">User Management System</h1>
         <div class="function" aria-label="Header function">
           <div class="sort-function" aria-label="sorting function">
             <h2 id="sort-by" aria-label="Sort by">Sort By:</h2>
-            <div class="sort-btns">
+            <div class="sort-btns" >
+
               <div class="sort-selection" aria-label="choose Parameter">
-                <select id="sort-feild" aria-label="sorting data feild">
-                  <option value="firstName" aria-label="First Name">
-                    First Name
-                  </option>
-                  <option value="lastName" aria-label="Second Name">
-                    Last Name
-                  </option>
-                  <option value="age" aria-label="Age">Age</option>
+                <select id="sort-fields" aria-label="sorting data feild">
                 </select>
                 <select id="order" aria-label="Choose sorting order">
-                  <option value="asc" aria-label="Ascending">Ascending</option>
-                  <option value="desc" aria-label="Descending">
-                    Descending
-                  </option>
                 </select>
               </div>
-              <button id="sort-submit">Sort</button>
+              <button id="sort-submit" >Sort</button>
+
             </div>
           </div>
           <div id="add_new_user" aria-label="Add new User">
@@ -55,6 +47,18 @@
         <main class="user_list" aria-label="User data list"></main>
       </section>
     </div>
+    <form  id="addForm" aria-label="Add User Input">
+      <h3>Add Your Details</h3>
+      <div class="formInput">
+           <input type="text" name="firstName" class="input_data" placeholder="Type your First Name" aria-label="First Name">
+           <input type="text" name="lastName" class="input_data" placeholder="Type Your Last Name" aria-label="Last Name">
+           <input type="text" name="email" class="input_data" placeholder="Type Your Email" aria-label="Email">
+           <input type="text" name="username" class="input_data" placeholder="Type Your UserName" aria-label="Username">
+           <input type="text" name="age" class="input_data" placeholder="Type Your age" aria-label="Age">
+           <input type="text" name="gender" class="input_data" placeholder="Type Your Gender" aria-label="Gender">
+      </div>
+      <input type="submit" name="Submit" id="form-submit" role="none">
+    </form>
     <script src="./src/index.ts" type="module"></script>
   </body>
 </html>

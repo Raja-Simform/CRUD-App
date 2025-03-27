@@ -6,7 +6,7 @@
     "start": "parcel ./index.html ",
     "prepare": "husky",
     "lint": "eslint src",
-    "build":"parcel build ./index.html"
+    "build":"parcel build ./index.html --public-url ./"
   },
   "keywords": [],
   "author": "",
