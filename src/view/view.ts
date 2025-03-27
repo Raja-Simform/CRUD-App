@@ -24,6 +24,7 @@ export class View {
       if (addForm && container) {
         addForm.style.zIndex = '-1';
         container.style.opacity = '1';
+        document.body.style.overflow = 'auto';
         addForm.reset();
       }
     });
@@ -42,45 +43,69 @@ export class View {
 
   render(data: User[]): void {
     this.user_list.innerHTML = '';
-    data.forEach((element) => {
-      const user = document.createElement('div');
-      const first_name = document.createElement('span');
-      const last_name = document.createElement('span');
-      const email = document.createElement('span');
-      const username = document.createElement('span');
-      const age = document.createElement('span');
-      const gender = document.createElement('span');
-      const deletebtn = document.createElement('button');
+    const table = document.createElement('table');
+    const headerRow = document.createElement('tr');
+    const cellClassname = [
+      'user_list_first_name',
+      'user_list_last_name',
+      'user_list_email',
+      'user_list_username',
+      'user_list_age',
+      'user_list_gender',
+    ];
+    const headers = [
+      'First Name',
+      'Last Name',
+      'Email',
+      'Username',
+      'Age',
+      'Gender',
+      'Actions',
+    ];
+    let count1 = 0;
+    headers.forEach((headerText) => {
+      const th = document.createElement('th');
+      th.textContent = headerText;
+      th.className = cellClassname[count1];
+      headerRow.appendChild(th);
+      count1++;
+    });
+    table.appendChild(headerRow);
 
+    data.forEach((element) => {
+      const row = document.createElement('tr');
+      row.id = element.id.toString();
+      row.className = 'user_list_item';
+      const cellData = [
+        element.firstName,
+        element.lastName,
+        element.email,
+        element.username,
+        element.age,
+        element.gender,
+      ];
+
+      let count = 0;
+      cellData.forEach((data) => {
+        const cell = document.createElement('td');
+        cell.textContent = data;
+        cell.className = cellClassname[count];
+        row.appendChild(cell);
+        count++;
+      });
+
+      const deleteCell = document.createElement('td');
+      const deletebtn = document.createElement('button');
       deletebtn.className = 'delete-btn';
       deletebtn.textContent = 'Delete';
-
-      user.className = 'user_list_item';
-      first_name.className = 'user_list_first_name';
-      last_name.className = 'user_list_last_name';
-      age.className = 'user_list_age';
-      email.className = 'user_list_email';
-      username.className = 'user_list_username';
-      gender.className = 'user_list_gender';
-      first_name.textContent = element.firstName;
-      last_name.textContent = element.lastName;
-      email.textContent = element.email;
-      username.textContent = element.username;
-      age.textContent = element.age;
-      gender.textContent = element.gender;
-
       deletebtn.value = element.id.toString();
-
-      user.appendChild(first_name);
-      user.appendChild(last_name);
-      user.appendChild(email);
-      user.appendChild(username);
-      user.appendChild(age);
-      user.appendChild(gender);
-      user.appendChild(deletebtn);
-      user.id = element.id.toString();
-      this.user_list.appendChild(user);
+      deletebtn.id = element.id.toString();
+      deleteCell.appendChild(deletebtn);
+      row.appendChild(deleteCell);
+      table.appendChild(row);
     });
+
+    this.user_list.appendChild(table);
   }
 
   addUser(): Promise<User[]> {
@@ -96,6 +121,7 @@ export class View {
     return new Promise((resolve) => {
       addForm.style.zIndex = '1';
       container.style.opacity = '0.2';
+      document.body.style.overflow = 'hidden';
       if (this.submitHandler) {
         addForm.removeEventListener('submit', this.submitHandler);
       }
@@ -116,6 +142,7 @@ export class View {
         addForm.reset();
         addForm.style.zIndex = '-1';
         container.style.opacity = '1';
+        document.body.style.overflow = 'auto';
 
         resolve(users);
       };

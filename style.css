@@ -11,7 +11,6 @@
   --border-color: blue;
   --black-color: black;
   --container-background-color: white;
-  
 
   --primary-color: #3498db;
   --secondary-color: #2ecc71;
@@ -28,11 +27,9 @@ body {
   line-height: 1.6;
 }
 .container {
-  /* background-color: var(--container-background-color); */
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  /* max-width: 1200px; */
   margin: 0 auto;
   padding: 20px;
   background-color: white;
@@ -53,8 +50,6 @@ body {
   border-radius: var(--border-radius);
   margin-bottom: 20px;
   text-align: center;
-
-  /* enhancement in responsive layoyut around 430px*/
 }
 h1 {
   font-size: 2rem;
@@ -104,7 +99,7 @@ h1 {
   align-items: center;
   justify-content: center;
 }
-#sort-feild {
+#sort-field {
   background-color: var(--btn-background);
   border: 1px solid var(--border-color);
   color: white;
@@ -114,12 +109,10 @@ h1 {
   text-align: center;
   outline: none;
 }
-#sort-feild:hover {
+#sort-field:hover {
   outline: 1px solid var(--black-color);
   cursor: pointer;
 }
-
-
 
 #order {
   background-color: var(--btn-background);
@@ -165,7 +158,7 @@ h1 {
   cursor: pointer;
 }
 
-.sort-btns select, 
+.sort-btns select,
 .sort-btns button,
 #add_new_user button {
   background-color: var(--secondary-color);
@@ -173,105 +166,57 @@ h1 {
   border: none;
   padding: 2px 3px;
   border-radius: var(--border-radius);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   cursor: pointer;
 }
 
-.sort-btns select:hover, 
+.sort-btns select:hover,
 .sort-btns button:hover,
 #add_new_user button:hover {
   /* transform: translateY(-2px); */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-} 
-
-
-.user {
-  display: flex;
-  flex-direction: column;
 }
-.user_list_header {
-  display: flex;
+
+table {
+  border: 1px solid red;
+  border-collapse: collapse;
+  width: 100%;
+}
+tr {
+  background-color: rgb(2, 28, 26);
+  color: white;
+}
+td {
+  border: 1px solid rgb(241, 241, 241);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   height: 3rem;
-  width: 100%;
-  background-color: aliceblue;
 }
-.user_list {
-  background-color: rgb(181, 209, 204);
-  width: 100%;
-}
-.user_list_item {
-  display: flex;
-  width: 100%;
-  height: 2rem;
-}
-.user_list_first_name {
-  width: 15%;
-  border: 1px solid rgb(17, 16, 16);
-  text-align: center;
+th {
+  border: 1px solid rgb(253, 249, 249);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  height: 3rem;
+  background-color: black;
 }
-.user_list_last_name {
-  width: 15%;
-  border: 1px solid var(--user-list-bg);
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.user_list_email {
-  width: 25%;
-  border: 1px solid var(--user-list-bg);
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.user_list_username {
-  width: 10%;
-  border: 1px solid var(--user-list-bg);
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.user_list_age {
-  width: 10%;
-  border: 1px solid var(--user-list-bg);
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.user_list_gender {
-  width: 10%;
-  border: 1px solid var(--user-list-bg);
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.user_list_delete {
-  width: 15%;
-  border: 1px solid var(--user-list-bg);
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+
 .delete-btn {
-  width: 15%;
   border: 1px solid var(--user-list-bg);
   text-align: center;
   background-color: rgb(194, 201, 178);
-
+  width: 100%;
+  height: 100%;
 }
 .delete-btn:hover {
   background-color: white;
   cursor: pointer;
-  
 }
+
 #addForm {
   display: none;
   position: absolute;
@@ -328,48 +273,33 @@ h1 {
   background-color: #ff4d4d;
   color: white;
 }
-@media(max-width:1132px){
-  .user_list_username {
-    width: 15%;
- }
- .user_list_email {
-   display: none;
- }
- .user_list_first_name{
-      width: 25%;
- }
- .user_list_last_name{
-      width: 25%;
- }
+@media (max-width: 1132px) {
+  .user_list_email {
+    display: none;
+  }
 }
+
 @media (max-width: 768px) {
   .function {
     flex-direction: column;
     gap: 15px;
   }
-} 
- 
+}
+
 @media (max-width: 712px) {
   .function {
     gap: 5px;
     display: flex;
     flex-direction: column;
   }
-  .user_list_gender{
+  .user_list_gender {
     display: none;
-  }
-  .user_list_username{
-    width: 20%;
-  }
-  .user_list_age{
-    width: 15%;
   }
 }
 @media (max-width: 554px) {
   .sort-btns {
     justify-content: center;
     align-items: flex-start;
-    
   }
   .header {
     height: 30%;
@@ -378,48 +308,36 @@ h1 {
     width: 100%;
     justify-content: start;
   }
-  .sort-selection{
+  .sort-selection {
     display: flex;
     justify-content: center;
     align-items: flex-start;
   }
 }
-@media(max-width:493px){
+@media (max-width: 493px) {
   .sort-function {
     width: 100%;
     justify-content: start;
   }
-  .sort-selection{
+  .sort-selection {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 5px;
   }
-  .sort-btns{
+  .sort-btns {
     align-items: center;
   }
-  .function{
+  .function {
     height: 80%;
     gap: 10px;
   }
-  .user_list_username{
+  .user_list_username {
     display: none;
   }
-  .user_list_first_name{
-    width: 32%;
-  }
-  .user_list_last_name{
-    width: 32%;
-  }
-  .delete-btn{
-    width: 21%;
-  }
-  .user_list_delete{
-    width: 21%;
-  }
 }
-@media (max-width: 389px) {
+@media (max-width: 393px) {
   .header {
     height: 30%;
   }
@@ -433,20 +351,23 @@ h1 {
   #sort-submit {
     margin-right: 2px;
   }
+  .container {
+    padding: 0;
+  }
 }
 ::-webkit-scrollbar {
   width: 10px;
 }
- 
+
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
- 
+
 ::-webkit-scrollbar-thumb {
   background: var(--primary-color);
   border-radius: 5px;
 }
- 
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--secondary-color);
-} 
+}

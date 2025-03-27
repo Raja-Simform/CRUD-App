@@ -25,7 +25,7 @@ export class Controller {
     const sortValue1 = ['firstName', 'lastName', 'age'];
     const sortOption2 = ['Ascending', 'Descending'];
     const sortValue2 = ['asc', 'desc'];
-    const select1 = document.getElementById('sort-feild') as HTMLElement;
+    const select1 = document.getElementById('sort-field') as HTMLElement;
     const select2 = document.getElementById('order') as HTMLElement;
     this.View.renderSort(sortOption1, sortValue1, select1);
     this.View.renderSort(sortOption2, sortValue2, select2);
@@ -46,24 +46,30 @@ export class Controller {
     if (data.length > 0) {
       const newUser = data[data.length - 1];
       const updatedUsers = this.Services.addUser(newUser);
-
       this.View.render(updatedUsers);
+
+      const deletebtn = document.querySelectorAll('.delete-btn');
+      if (deletebtn) {
+        deletebtn.forEach((element) => {
+          element.addEventListener('click', this.handleDelete.bind(this));
+        });
+      }
     }
     console.log(data);
   }
 
   async handleSort(): Promise<void> {
     const order = document.getElementById('order') as HTMLSelectElement;
-    const sortFeild = document.getElementById(
-      'sort-feild',
+    const sortFields = document.getElementById(
+      'sort-field',
     ) as HTMLSelectElement;
-    if (!order || !sortFeild) {
+    if (!order || !sortFields) {
       console.log('element not exists');
       return;
     }
-    const sortfeild1 = order.value;
-    const sortfeild2 = sortFeild.value;
-    const data = await this.Services.sortUser(sortfeild1, sortfeild2);
+    const sortfield1 = order.value;
+    const sortfield2 = sortFields.value;
+    const data = await this.Services.sortUser(sortfield1, sortfield2);
     console.log(data.users);
     this.View.render(data.users);
   }
@@ -71,7 +77,7 @@ export class Controller {
   handleDelete(event: Event): void {
     const button = event.target as HTMLButtonElement;
     const userId = button.value;
-    // console.log(userId);
+    console.log(userId);
     this.Services.deleteUser(userId);
     this.View.deleteUser(userId);
   }
