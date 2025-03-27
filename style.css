@@ -70,7 +70,7 @@ h1 {
   align-items: center;
   justify-content: center;
 }
-#sort-feilds {
+#sort-fields {
   background-color: var(--btn-background);
   border: 1px solid var(--border-color);
   color: white;
@@ -79,7 +79,7 @@ h1 {
   border-radius: 0.3rem;
   text-align: center;
 }
-#sort-feilds:hover {
+#sort-fields:hover {
   outline: 1px solid var(--black-color);
   cursor: pointer;
 }

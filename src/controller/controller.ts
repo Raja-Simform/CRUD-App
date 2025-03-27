@@ -24,7 +24,7 @@ export class Controller {
     const sortValue1 = ['firstName', 'lastName', 'age'];
     const sortOption2 = ['Ascending', 'Descending'];
     const sortValue2 = ['asc', 'desc'];
-    const select1 = document.getElementById('sort-feilds') as HTMLElement;
+    const select1 = document.getElementById('sort-fields') as HTMLElement;
     const select2 = document.getElementById('order') as HTMLElement;
     this.View.renderSort(sortOption1, sortValue1, select1);
     this.View.renderSort(sortOption2, sortValue2, select2);
@@ -44,15 +44,15 @@ export class Controller {
   }
   async handleSort(): Promise<void> {
     const order = document.getElementById('order') as HTMLSelectElement;
-    const sortFeilds = document.getElementById(
-      'sort-feilds',
+    const sortFields = document.getElementById(
+      'sort-fields',
     ) as HTMLSelectElement;
-    if (!order || !sortFeilds) {
+    if (!order || !sortFields) {
       console.log('element not exists');
       return;
     }
     const sortfeild1 = order.value;
-    const sortfeild2 = sortFeilds.value;
+    const sortfeild2 = sortFields.value;
     const data = await this.Services.sortUser(sortfeild1, sortfeild2);
     console.log(data.users);
     this.View.render(data.users);
