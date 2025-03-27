@@ -129,13 +129,43 @@ export class View {
         e.preventDefault();
         const data = new FormData(addForm);
         const id = Date.now().toString();
+
+        const validateNoSpaces = (value: string | null): boolean => {
+          return value ? !/\s/.test(value) : false;
+        };
+
+        const firstName = data.get('firstName') as string;
+        const lastName = data.get('lastName') as string;
+        const username = data.get('username') as string;
+        const email = data.get('email') as string;
+        const gender = data.get('gender') as string;
+        const age = data.get('age') as string;
+        if (
+          !firstName ||
+          !validateNoSpaces(firstName) ||
+          !lastName ||
+          !validateNoSpaces(lastName) ||
+          !username ||
+          !validateNoSpaces(username) ||
+          !age ||
+          !validateNoSpaces(age) ||
+          !gender ||
+          !validateNoSpaces(gender) ||
+          !email ||
+          !validateNoSpaces(email)
+        ) {
+          // eslint-disable-next-line no-undef
+          alert('Please fill all feilds');
+          return;
+        }
+
         const newuser: User = {
-          firstName: data.get('firstName') as string,
-          lastName: data.get('lastName') as string,
-          age: data.get('age') as string,
-          email: data.get('email') as string,
-          username: data.get('username') as string,
-          gender: data.get('gender') as string,
+          firstName: firstName,
+          lastName: lastName,
+          age: age,
+          email: email,
+          username: username,
+          gender: gender,
           id: Number(id),
         };
         users.push(newuser);
