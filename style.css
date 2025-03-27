@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 :root {
   --header-font-size: 1.5rem;
@@ -10,16 +11,32 @@
   --border-color: blue;
   --black-color: black;
   --container-background-color: white;
+  
+
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #f4f7f6;
+  --text-color: #2c3e50;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 body {
   width: 100%;
   position: relative;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 .container {
-  background-color: var(--container-background-color);
+  /* background-color: var(--container-background-color); */
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: var(--box-shadow);
 }
 .header {
   width: 100%;
@@ -29,6 +46,15 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  text-align: center;
+
+  /* enhancement in responsive layoyut around 430px*/
 }
 h1 {
   font-size: 2rem;
@@ -37,6 +63,9 @@ h1 {
   text-align: center;
   height: 40%;
   width: 100%;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
 }
 .function {
   height: 60%;
@@ -45,6 +74,12 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2473c2;
+  padding: 15px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
 }
 .sort-function {
   height: 100%;
@@ -77,11 +112,14 @@ h1 {
   font-size: 1rem;
   border-radius: 0.3rem;
   text-align: center;
+  outline: none;
 }
 #sort-feild:hover {
   outline: 1px solid var(--black-color);
   cursor: pointer;
 }
+
+
 
 #order {
   background-color: var(--btn-background);
@@ -91,6 +129,7 @@ h1 {
   border-radius: 0.3rem;
   text-align: center;
   color: white;
+  outline: none;
 }
 #order:hover {
   outline: 1px solid var(--black-color);
@@ -125,6 +164,26 @@ h1 {
   outline: 1px solid black;
   cursor: pointer;
 }
+
+.sort-btns select, 
+.sort-btns button,
+#add_new_user button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 2px 3px;
+  border-radius: var(--border-radius);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.sort-btns select:hover, 
+.sort-btns button:hover,
+#add_new_user button:hover {
+  /* transform: translateY(-2px); */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} 
+
 
 .user {
   display: flex;
@@ -206,10 +265,12 @@ h1 {
   border: 1px solid var(--user-list-bg);
   text-align: center;
   background-color: rgb(194, 201, 178);
+
 }
 .delete-btn:hover {
   background-color: white;
   cursor: pointer;
+  
 }
 #addForm {
   display: none;
@@ -302,3 +363,185 @@ h1 {
     width: fit-content;
   }
 }
+
+/* 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+ 
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --background-color: #f4f7f6;
+  --text-color: #2c3e50;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+ 
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+ 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+}
+ 
+/* Header Styling */
+/* .header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  text-align: center;
+}
+ 
+#heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: white;
+} */
+ 
+/* Function Area */
+/* .function {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+} */
+ 
+/* Buttons and Selects */
+/* .sort-btns select, 
+.sort-btns button,
+#add_new_user button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+ 
+.sort-btns select:hover, 
+.sort-btns button:hover,
+#add_new_user button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} */
+ 
+/* User List Table */
+/* .user_list { */
+  /* background-color: white;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+ 
+.user-data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+ 
+.user-data-table th {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+ 
+.user-data-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+ 
+.user-data-table tr:hover {
+  background-color: #e9ecef;
+  transition: background-color 0.3s ease;
+}
+ 
+.user-data-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e9ecef;
+}
+ 
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: var(--border-radius);
+  transition: background-color 0.2s;
+}
+ 
+.delete-btn:hover {
+  background-color: #c0392b;
+} */
+ 
+/* Add User Form */
+/* #addForm {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+ 
+.input_data {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  transition: border-color 0.3s;
+}
+ 
+.input_data:focus {
+  outline: none;
+  border-color: var(--primary-color);
+} */
+ 
+/* Responsive Adjustments */
+/* @media (max-width: 768px) {
+  .function {
+    flex-direction: column;
+    gap: 15px;
+  }
+ 
+  .user-data-table {
+    font-size: 14px;
+  }
+} */
+ 
+/* Scroll Bar Styling */
+/* ::-webkit-scrollbar {
+  width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+ 
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+} */
