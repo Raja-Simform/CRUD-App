@@ -51,9 +51,9 @@ export class Controller {
       console.log('element not exists');
       return;
     }
-    const sortfeild1 = order.value;
-    const sortfeild2 = sortFields.value;
-    const data = await this.Services.sortUser(sortfeild1, sortfeild2);
+    const sortfield1 = order.value;
+    const sortfield2 = sortFields.value;
+    const data = await this.Services.sortUser(sortfield1, sortfield2);
     console.log(data.users);
     this.View.render(data.users);
   }

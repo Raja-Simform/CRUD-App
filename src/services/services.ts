@@ -42,11 +42,11 @@ export class Services {
   }
 
   async sortUser(
-    sortfeild1: string,
-    sortfeild2: string,
+    sortfield1: string,
+    sortfield2: string,
   ): Promise<{ users: User[] }> {
     const response = await fetch(
-      `${this.url}?sortBy=${sortfeild2}&order=${sortfeild1}`,
+      `${this.url}?sortBy=${sortfield2}&order=${sortfield1}`,
     );
     const data = await response.json();
     return data;
