@@ -39,7 +39,6 @@ export class View {
       select.appendChild(option);
     }
   }
-
   render(data: User[]): void {
     this.user_list.innerHTML = '';
     data.forEach((element) => {

@@ -44,15 +44,15 @@ export class Controller {
   }
   async handleSort(): Promise<void> {
     const order = document.getElementById('order') as HTMLSelectElement;
-    const sortFeild = document.getElementById(
+    const sortFeilds = document.getElementById(
       'sort-feild',
     ) as HTMLSelectElement;
-    if (!order || !sortFeild) {
+    if (!order || !sortFeilds) {
       console.log('element not exists');
       return;
     }
     const sortfeild1 = order.value;
-    const sortfeild2 = sortFeild.value;
+    const sortfeild2 = sortFeilds.value;
     const data = await this.Services.sortUser(sortfeild1, sortfeild2);
     console.log(data.users);
     this.View.render(data.users);
