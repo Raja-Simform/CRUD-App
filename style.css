@@ -21,7 +21,6 @@
 }
 body {
   width: 100%;
-  position: relative;
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -34,6 +33,7 @@ body {
   padding: 20px;
   background-color: white;
   box-shadow: var(--box-shadow);
+  position: relative;
 }
 .header {
   width: 100%;
@@ -220,8 +220,8 @@ th {
 #addForm {
   display: none;
   position: absolute;
-  top: 20%;
-  left: 30%;
+  top: 50%; right: 50%;
+  transform: translate(50%,-50%);
   flex-direction: column;
   align-items: center;
   justify-content: center;
