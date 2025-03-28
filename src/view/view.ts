@@ -25,6 +25,7 @@ export class View {
         addForm.style.zIndex = '-1';
         container.style.opacity = '1';
         document.body.style.overflow = 'auto';
+        addForm.style.display = 'none';
         addForm.reset();
       }
     });
@@ -174,6 +175,7 @@ export class View {
         addForm.style.zIndex = '-1';
         container.style.opacity = '1';
         document.body.style.overflow = 'auto';
+        addForm.style.display = 'none';
 
         resolve(users);
       };
