@@ -6,7 +6,7 @@
     "start": "parcel ./index.html ",
     "prepare": "husky",
     "lint": "eslint src",
-    "build":"parcel build ./index.html --public-url ./"
+    "build": "parcel build ./index.html --public-url ./"
   },
   "keywords": [],
   "author": "",
@@ -30,5 +30,4 @@
       "prettier --write --ignore-unknown"
     ]
   }
-
 }

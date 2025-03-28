@@ -30,14 +30,11 @@ export class Services {
         email: data.email,
         gender: data.gender,
       }),
-    })
-      .then((res) => res.json())
-      .then(console.log);
-
+    }).then((res) => res.json());
     if (!data.id) {
-      data.id = Date.now().toString();
+      data.id = Date.now();
     }
-    this.users.push(data);
+    this.users.unshift(data);
     return this.users;
   }
 
@@ -50,5 +47,11 @@ export class Services {
     );
     const data = await response.json();
     return data;
+  }
+
+  async deleteUser(id: string) {
+    fetch(`https://dummyjson.com/users/${id}`, {
+      method: 'DELETE',
+    }).then((res) => res.json());
   }
 }

@@ -17,7 +17,8 @@
             <div class="sort-btns" >
 
               <div class="sort-selection" aria-label="choose Parameter">
-                <select id="sort-fields" aria-label="sorting data feild">
+
+                <select id="sort-field" aria-label="sorting data field">
                 </select>
                 <select id="order" aria-label="Choose sorting order">
                 </select>
@@ -32,30 +33,18 @@
         </div>
       </section>
       <section class="user" aria-label="User information">
-        <header class="user_list_header" aria-label="User header">
-          <span class="user_list_first_name" aria-label="First Name"
-            >First Name</span
-          >
-          <span class="user_list_last_name" aria-label="Last name"
-            >Last name</span
-          >
-          <span class="user_list_email" aria-label="Email">Email</span>
-          <span class="user_list_username" aria-label="Username">Username</span>
-          <span class="user_list_age" aria-label="Age">Age</span>
-          <span class="user_list_gender" aria-label="Gender">Gender</span>
-        </header>
         <main class="user_list" aria-label="User data list"></main>
       </section>
     </div>
     <form  id="addForm" aria-label="Add User Input">
       <h3>Add Your Details</h3>
       <div class="formInput">
-           <input type="text" name="firstName" class="input_data" placeholder="Type your First Name" aria-label="First Name">
-           <input type="text" name="lastName" class="input_data" placeholder="Type Your Last Name" aria-label="Last Name">
-           <input type="text" name="email" class="input_data" placeholder="Type Your Email" aria-label="Email">
-           <input type="text" name="username" class="input_data" placeholder="Type Your UserName" aria-label="Username">
-           <input type="text" name="age" class="input_data" placeholder="Type Your age" aria-label="Age">
-           <input type="text" name="gender" class="input_data" placeholder="Type Your Gender" aria-label="Gender">
+           <input type="text" name="firstName" class="input_data" placeholder="Type your First Name" aria-label="First Name" required>
+           <input type="text" name="lastName" class="input_data" placeholder="Type Your Last Name" aria-label="Last Name" required>
+           <input type="email" name="email" class="input_data" placeholder="Type Your Email" aria-label="Email" required>
+           <input type="text" name="username" class="input_data" placeholder="Type Your UserName" aria-label="Username" required>
+           <input type="number" name="age" class="input_data" placeholder="Type Your age" aria-label="Age" required>
+           <input type="text" name="gender" class="input_data" placeholder="Type Your Gender" aria-label="Gender" required>
       </div>
       <input type="submit" name="Submit" id="form-submit" role="none">
     </form>
