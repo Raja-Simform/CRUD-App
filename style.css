@@ -277,6 +277,7 @@ th {
   .user_list_email {
     display: none;
   }
+  
 }
 
 @media (max-width: 768px) {
@@ -294,6 +295,10 @@ th {
   }
   .user_list_gender {
     display: none;
+  }
+  #addForm{
+  width: 50%;
+  height: 25rem;
   }
 }
 @media (max-width: 554px) {
@@ -335,6 +340,10 @@ th {
   }
   .user_list_username {
     display: none;
+  }
+  #addForm{
+    width: 80%;
+    height: 25rem;
   }
 }
 @media (max-width: 393px) {
