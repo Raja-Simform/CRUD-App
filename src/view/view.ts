@@ -44,7 +44,6 @@ export class View {
       select.appendChild(option);
     }
   }
-
   render(data: User[]): void {
     this.user_list.innerHTML = '';
     const table = document.createElement('table');

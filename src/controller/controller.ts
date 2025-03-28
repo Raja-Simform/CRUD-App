@@ -38,7 +38,9 @@ export class Controller {
     
     const sortOption2 = ['Ascending', 'Descending'];
     const sortValue2 = ['asc', 'desc'];
+
     const select1 = document.getElementById('sort-field') as HTMLElement;
+
     const select2 = document.getElementById('order') as HTMLElement;
     this.View.renderSort(sortOption1, sortOption1, select1);
     this.View.renderSort(sortOption2, sortValue2, select2);
@@ -72,11 +74,13 @@ export class Controller {
       'sort-field',
     ) as HTMLSelectElement;
     if (!order || !sortFields) {
-      return;
+
     }
     const sortfield1 = order.value;
     const sortfield2 = sortFields.value;
     const data = await this.Services.sortUser(sortfield1, sortfield2);
+
+
     this.View.render(data.users);
   }
 
