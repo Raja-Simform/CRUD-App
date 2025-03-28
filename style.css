@@ -33,7 +33,7 @@ body {
   padding: 20px;
   background-color: white;
   box-shadow: var(--box-shadow);
-  position: relative;
+   position: relative;
 }
 .header {
   width: 100%;
